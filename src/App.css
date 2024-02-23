@@ -1,0 +1,28 @@
+:root{
+    --lightGray: #a1a1aa;
+    --primary: #2DD4BF;
+}
+
+html,body{
+    overflow-x: hidden;
+}
+body{
+    margin: 0;
+    line-height: 1.4;
+    font-family: 'Inter', sans-serif;
+    color: var(--lightGray);
+    background: rgb(77,77,77);
+    background: linear-gradient(0deg, #0a0a0c 0%, #07161c 100%);
+}
+p{
+    margin-top: 0;
+}
+p:not(:last-child){
+    margin-bottom: 0;
+}
+.primary-text{
+    color: var(--primary);
+}
+.light-text{
+    color: var(--lightGray);
+}
