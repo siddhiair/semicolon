@@ -2,12 +2,14 @@ import { Routes, Route } from "react-router-dom";
 
 import HomePage from "./pages/home";
 import SearchPage from "./pages/search";
+import PreSearchPage from "./pages/preSearch";
 
 function App() {
    return (
       <Routes>
          <Route path="/" element={<HomePage />}></Route>
-         <Route path="search" element={<SearchPage />}></Route>
+         <Route path="/preSearch/search" element={<SearchPage />}></Route>
+         <Route path="preSearch" element={<PreSearchPage />}></Route>
       </Routes>
    );
 }
