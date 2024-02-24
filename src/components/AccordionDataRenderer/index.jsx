@@ -40,7 +40,7 @@ export default function AccordionDataRenderer({
           <ErrorComponent />
         ) : (
           tabsData?.map((tab, index) => (
-            <TabPanel index={index} key={index}>
+            <TabPanel index={index} key={index} className="tab-panels-wrapper">
               {tab?.content?.length ? (
                 <CustomAccordion accordionData={tab?.content} />
               ) : (

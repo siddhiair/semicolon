@@ -1,34 +1,40 @@
-:root{
-    --lightGray: #a1a1aa;
-    --primary: #2DD4BF;
-    --darkerGray: #717171;
-    --lighterGray: #d5d5d5;
+:root {
+  --lightGray: #a1a1aa;
+  --primary: #2dd4bf;
+  --darkerGray: #717171;
+  --lighterGray: #d5d5d5;
 }
 
-html,body{
-    overflow-x: hidden;
+html,
+body {
+  overflow-x: hidden;
 }
-body{
-    margin: 0;
-    line-height: 1.4;
-    font-size: 14px;
-    font-family: 'Inter', sans-serif;
-    color: var(--lightGray);
-    background: rgb(77,77,77);
-    background: linear-gradient(0deg, #0a0a0c 0%, #07161c 100%);
+body {
+  margin: 0;
+  line-height: 1.4;
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+  color: var(--lightGray);
+  background: rgb(77, 77, 77);
+  min-height: 100vh;
+  background: linear-gradient(0deg, #0a0a0c 0%, #07161c 100%);
 }
-p{
-    margin-top: 0;
+p {
+  margin-top: 0;
 }
-p:not(:last-child){
-    margin-bottom: 0;
+p:not(:last-child) {
+  margin-bottom: 0;
 }
-.primary-text{
-    color: var(--primary);
+.primary-text {
+  color: var(--primary);
 }
-.light-text{
-    color: var(--lightGray);
+.light-text {
+  color: var(--lightGray);
 }
-.lighter-text{
-    color: var(--lighterGray);
+.lighter-text {
+  color: var(--lighterGray);
+}
+.tab-panels-wrapper .css-19kzrtu {
+  padding: 0;
+  margin-top: 40px;
 }
