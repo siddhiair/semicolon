@@ -1,6 +1,8 @@
 :root{
     --lightGray: #a1a1aa;
     --primary: #2DD4BF;
+    --darkerGray: #717171;
+    --lighterGray: #d5d5d5;
 }
 
 html,body{
@@ -26,4 +28,7 @@ p:not(:last-child){
 }
 .light-text{
     color: var(--lightGray);
+}
+.lighter-text{
+    color: var(--lighterGray);
 }

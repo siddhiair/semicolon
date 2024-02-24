@@ -1,10 +1,7 @@
 import React from "react";
 import Box from "@mui/material/Box";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-import Typography from "@mui/material/Typography";
 import PropTypes from "prop-types";
-import Container from '@mui/material/Container';
+import Container from "@mui/material/Container";
 
 import CustomAccordion from "../accordion";
 
@@ -19,16 +16,14 @@ function TabPanel(props) {
 
   return (
     <div role="tabpanel" {...other}>
-      <Box p={3}>
-        {children}
-      </Box>
+      <Box p={3}>{children}</Box>
     </div>
   );
 }
 
 TabPanel.propTypes = {
   children: PropTypes.node,
-  index: PropTypes.number.isRequired
+  index: PropTypes.number.isRequired,
 };
 
 export default function AccordionDataRenderer({
@@ -36,7 +31,6 @@ export default function AccordionDataRenderer({
   isDataFetchInProgress,
   fetchErrorOccurred,
 }) {
-
   return (
     <Container fixed>
       <div className="multi-tab-container">
