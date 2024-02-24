@@ -6,6 +6,7 @@ import Search from "./components/search";
 import "./App.css";
 import axios from "axios";
 import AppNavBar from "./components/navbar";
+import Index from "./components/home";
 
 function App() {
   const [appData, setAppData] = useState([
@@ -42,14 +43,17 @@ function App() {
   return (
     <>
       <AppNavBar />
+     
       <div className="app-container">
         <Search handleSearch={handleSearch} />
+           <Index/>
         <AccordionDataRenderer
           tabsData={appData}
           isDataFetchInProgress={isDataFetchInProgress}
           fetchErrorOccurred={fetchErrorOccurred}
         />
       </div>
+   
     </>
   );
 }

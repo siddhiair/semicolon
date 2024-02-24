@@ -1,0 +1,12 @@
+.home-page-container{
+   
+    min-height: 500px;
+    border-radius: 12px;
+    margin: 0 auto;
+    padding-top: 20px;
+  }
+  
+
+  .div-card{
+   background-color: #001a23;
+  }
