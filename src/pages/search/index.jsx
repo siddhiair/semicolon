@@ -8,8 +8,11 @@ import AppNavBar from "../../components/navbar";
 import Index from "../../components/LandingPage";
 
 import "./index.css";
+import { useLocation } from "react-router-dom";
 
 const SearchPage = ({ buttonsConfig }) => {
+   const [queryParams, setQueryParams] = useState({});
+   let { search } = useLocation();
    const [appData, setAppData] = useState([
       {
          label: "Code",
@@ -56,6 +59,17 @@ const SearchPage = ({ buttonsConfig }) => {
       updateAppData();
    }, [filterButtonsConfig, appData]);
 
+   useEffect(() => {
+      let queryParams = {};
+      const query = new URLSearchParams(search);
+      queryParams["searchedValue"] = query.get("searchedValue");
+      setQueryParams(queryParams);
+   }, []);
+
+   useEffect(() => {
+      handleSearch(queryParams.searchedValue);
+   }, [queryParams]);
+
    const handleSearch = async (searchedValue) => {
       // Expecting following response from our backend, lets not process data on UI.
       setIsDataFetchInProgress(true);
@@ -82,6 +96,7 @@ const SearchPage = ({ buttonsConfig }) => {
                handleSearch={handleSearch}
                buttonsConfig={filterButtonsConfig}
                onFilterClick={handleFilterClick}
+               searchedValue={queryParams.searchedValue}
             />
             {/* <Index /> */}
             <AccordionDataRenderer
