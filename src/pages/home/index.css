@@ -1,12 +1,36 @@
-.main-container {
-   display: flex;
-   flex-direction: column;
-   justify-content: space-around;
-   height: 100vh;
-   width: 80vw;
-   margin-left: 9rem;
+.login-card {
+  max-width: 550px;
+  margin: 50px auto;
+  border-radius: 10px;
+  background: #001a23;
+  border: 1px solid #33484f;
 }
-
+.login-card-title {
+  font-size: 2em;
+  font-weight: 700;
+  color: #fff;
+}
+.login-card-title span {
+  background: linear-gradient(45deg, #2cdaad, #7768f4, #e254ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
 .hero-image {
-   width: 100%;
+  background: linear-gradient(to right, #2cdaad, #7768f4, #e254ff);
+}
+.hero-image img {
+  width: 100%;
+  height: auto;
+  mix-blend-mode: multiply;
+}
+.login-footer {
+  padding: 2em;
+  display: flex;
+  align-items: center;
+  column-gap: 30px;
+  background: linear-gradient(45deg, #278f74, #535199, #8641a4);
+}
+.login-footer p {
+  color: #fff;
 }

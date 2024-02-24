@@ -1,16 +1,17 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
+import * as React from "react";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import Menu from "@mui/material/Menu";
+import Container from "@mui/material/Container";
+import Avatar from "@mui/material/Avatar";
+import Tooltip from "@mui/material/Tooltip";
+import MenuItem from "@mui/material/MenuItem";
+import { logo } from "../../assets/images";
 
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function AppNavBar() {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -24,25 +25,15 @@ function AppNavBar() {
   };
 
   return (
-    <AppBar position="static" sx={{ bgcolor: 'transparent', boxShadow: 'none' }}>
+    <AppBar
+      position="static"
+      sx={{ bgcolor: "transparent", boxShadow: "none" }}
+    >
       <Container fixed>
-        <Toolbar 
-          disableGutters
-          sx={{ justifyContent: 'space-between' }}>
-          <Typography
-            variant="h6"
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              fontWeight: 700,
-              lineHeight: 1,
-              textDecoration: 'none',
-            }}
-            className='primary-text'
-          >
-            Developer<br></br>Tool
-          </Typography>
+        <Toolbar disableGutters sx={{ justifyContent: "space-between" }}>
+          <a href="/">
+            <img src={logo} width={180} height={45} alt="Logo" />
+          </a>
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
@@ -51,17 +42,17 @@ function AppNavBar() {
               </IconButton>
             </Tooltip>
             <Menu
-              sx={{ mt: '45px' }}
+              sx={{ mt: "45px" }}
               id="menu-appbar"
               anchorEl={anchorElUser}
               anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
+                vertical: "top",
+                horizontal: "right",
               }}
               keepMounted
               transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
+                vertical: "top",
+                horizontal: "right",
               }}
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}

@@ -12,7 +12,6 @@ const PreSearchPage = ({ buttonsConfig }) => {
   const navigate = useNavigate();
 
   const [filterButtonsConfig, setFiltersButtonConfig] = useState(buttonsConfig);
-
   const handleFilterClick = (id) => {
     const updatedButtonsConfig = filterButtonsConfig.map((buttonConfig) =>
       buttonConfig.id !== id
