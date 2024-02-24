@@ -5,16 +5,20 @@ import Header from "./header";
 import Footer from "./footer";
 import AppNavBar from "../../components/navbar";
 
+import "./index.css";
+
 const HomePage = () => {
    const navigate = useNavigate();
    return (
       <>
          <AppNavBar />
-         <Header />
-         <div class="hero-image">
-            <img src="src/assets/images/hero.png" alt="" />
+         <div className="main-container">
+            <Header />
+            <div className="hero-image">
+               <img src="src/assets/images/hero.png" alt="" />
+            </div>
+            <Footer />
          </div>
-         <Footer />
       </>
    );
 };

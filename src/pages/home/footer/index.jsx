@@ -1,22 +1,28 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
+import "./index.css";
+
 const Footer = () => {
    const navigate = useNavigate();
    return (
       <div class="footer-container">
-         <div>Lorem ipsum dolor sit amet.</div>
-         <div>Lorem ipsum dolor sit amet.</div>
          <div>
-            <button
-               onClick={() => {
-                  navigate("/search");
-               }}
-               type="button"
-            >
-               Sign in SSO
-            </button>
+            <div className="signIn-text">
+               Sign in using SSO or use a different sign in method{" "}
+            </div>
+            <div className="create-account-text">create Account instead?</div>
          </div>
+
+         <button
+            className="signIn-button"
+            onClick={() => {
+               navigate("/search");
+            }}
+            type="button"
+         >
+            Sign in with SSO
+         </button>
       </div>
    );
 };
