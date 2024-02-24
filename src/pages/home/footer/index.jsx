@@ -17,7 +17,7 @@ const Footer = () => {
          <button
             className="signIn-button"
             onClick={() => {
-               navigate("/search");
+               navigate("/preSearch");
             }}
             type="button"
          >
