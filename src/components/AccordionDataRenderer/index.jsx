@@ -15,23 +15,20 @@ import ErrorComponent from "./components/errorComponent";
 import "./index.css";
 
 function TabPanel(props) {
-  const { children, value, index, ...other } = props;
+  const { children, ...other } = props;
 
   return (
-    <div role="tabpanel" hidden={value !== index} {...other}>
-      {value === index && (
-        <Box p={3}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
+    <div role="tabpanel" {...other}>
+      <Box p={3}>
+        {children}
+      </Box>
     </div>
   );
 }
 
 TabPanel.propTypes = {
   children: PropTypes.node,
-  index: PropTypes.number.isRequired,
-  value: PropTypes.number.isRequired,
+  index: PropTypes.number.isRequired
 };
 
 export default function AccordionDataRenderer({
@@ -39,40 +36,17 @@ export default function AccordionDataRenderer({
   isDataFetchInProgress,
   fetchErrorOccurred,
 }) {
-  const [value, setValue] = React.useState(0);
-
-  const handleTabChange = ( newValue) => {
-    setValue(newValue);
-  };
 
   return (
     <Container fixed>
       <div className="multi-tab-container">
-        <Tabs
-          value={value}
-          onChange={handleTabChange}
-          aria-label="configurable tabs"
-        >
-          {tabsData.map((tab, index) => (
-            <Tab
-              label={tab.label}
-              key={index}
-              sx={{
-                "&:not(:first-of-type)": {
-                  ml: 62,
-                },
-              }}
-            />
-          ))}
-        </Tabs>
-
         {isDataFetchInProgress ? (
           <AccordionSkeleton />
         ) : fetchErrorOccurred ? (
           <ErrorComponent />
         ) : (
           tabsData?.map((tab, index) => (
-            <TabPanel value={value} index={index} key={index}>
+            <TabPanel index={index} key={index}>
               {tab?.content?.length ? (
                 <CustomAccordion accordionData={tab?.content} />
               ) : (
