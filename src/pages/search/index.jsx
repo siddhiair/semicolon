@@ -5,6 +5,7 @@ import axios from "axios";
 import AccordionDataRenderer from "../../components/AccordionDataRenderer";
 import Search from "../../components/search";
 import AppNavBar from "../../components/navbar";
+import Index  from "../../components/LandingPage";
 
 import "./index.css";
 
@@ -45,11 +46,12 @@ const SearchPage = () => {
          <AppNavBar />
          <div className="app-container">
             <Search handleSearch={handleSearch} />
-            <AccordionDataRenderer
+         <Index/>
+            {/* <AccordionDataRenderer
                tabsData={appData}
                isDataFetchInProgress={isDataFetchInProgress}
                fetchErrorOccurred={fetchErrorOccurred}
-            />
+            /> */}
          </div>
       </>
    );
