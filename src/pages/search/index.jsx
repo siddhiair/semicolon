@@ -52,8 +52,15 @@ const SearchPage = ({ buttonsConfig }) => {
          }
       }
       setAppDataToShow(newData);
-      debugger;
    };
+
+   useEffect(() => {
+      setFiltersButtonConfig(
+         JSON.parse(
+            window.localStorage.getItem("filterConfig") || buttonsConfig
+         )
+      );
+   }, []);
 
    useEffect(() => {
       updateAppData();
