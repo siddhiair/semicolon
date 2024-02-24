@@ -24,6 +24,10 @@ const PreSearchPage = ({ buttonsConfig }) => {
    };
 
    const handleSearch = async (searchedValue) => {
+      window.localStorage.setItem(
+         "filterConfig",
+         JSON.stringify(filterButtonsConfig)
+      );
       navigate(`search?searchedValue=${searchedValue}`);
    };
 
