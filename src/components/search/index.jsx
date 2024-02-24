@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import debounce from "lodash/debounce";
 import { FaSearch } from "react-icons/fa";
 import Container from "@mui/material/Container";
@@ -33,8 +33,13 @@ const Search = ({
    handleSearch,
    buttonsConfig,
    onFilterClick,
+   searchedValue,
 }) => {
-   const [inputValue, setInputValue] = useState("");
+   const [inputValue, setInputValue] = useState(searchedValue);
+
+   useEffect(() => {
+      setInputValue(searchedValue);
+   }, [searchedValue]);
 
    return (
       <Container fixed>
